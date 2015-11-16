@@ -1,32 +1,76 @@
+
+function memberData() 
+{
+
+	this.username = "";
+	this.firstname = "";
+	this.lastname = "";
+	this.email = "";
+	this.dob = "";
+	this.gnd = "";
+	this.locat = "";
+}
+
 function getProcess(){
 	var isValid = true;
-	var usersData = new Array(7);
+	var memberdata = new Array(1);
+	alert("Data pass 11");
+	memberdata[0] = new memberData();
 
-	usersData[0] = document.getElementById("userName").value;
-	usersData[1] = document.getElementById("firstName").value;
-	usersData[2] = document.getElementById("lastName").value;
-	usersData[3] = document.getElementById("email").value;
-	usersData[4] = document.getElementById("dob").value;
-	usersData[5] = document.getElementById("gender").value;
-	usersData[6] = document.getElementById("location").value;
+	memberdata[0].username = document.getElementById("userName").value.trim();
+	memberdata[0].firstname = document.getElementById("firstName").value.trim();
+	memberdata[0].lastname = document.getElementById("lastName").value.trim();
+	memberdata[0].email = document.getElementById("email").value.trim();
+	var confEmail = document.getElementById("emailConf").value.trim();
+	memberdata[0].dob = document.getElementById("dob").value.trim();
+	var gender = document.getElementById("gender").value;
+	memberdata[0].loct = document.getElementById("location").value.trim(); 
+	
+//	window.location.reload(true);
 
-	window.location.reload(true);
-
-	if(getValid(usersData[0])) {
-		getFocusOnField(usersData, 0);
+	// validate First name
+	if(getValid(memberdata[0].username)) {
+		//getFocusOnField(memberdata, 0);
 		isValid = false;
 	} 
 
-	if(getValid(usersData[1])) {
-		getFocusOnField(usersData, 1);
+	
+	// vaidata UserName
+	if(getValid(memberdata[0].firstname)) {
+		//getFocusOnField(memberdata, 1);
 		isValid = false;
 	}
-	
+	// validate email
+	if(validateEmail(memberdata[0].email)){
+		alert(memberdata[0].email + " == " + confEmail + " is: " + (memberdata[0].email != confEmail));
+		if(memberdata[0].email != confEmail){
+			isValid = false;
+		}
+	} else {
+		isValid = false;
+	}
+	// checking genda
+	if (gender == "Female") {
+		memberdata[0].gnd = "F";
+	} else if (gender == "Male") {
+		memberdata[0].gnd = "M";
+	} else {
+		memberdata[0].gnd = null;
+	}
+
 	if(isValid) {
-		
-		alert("Data " + usersData + " was successfully added" );
+		// send data to database
+		alert("Data: " + memberdata[0].firstname  + " is successfully added" );
 	} 
 }
+
+function validateEmail(inputText) {  
+	var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;  
+	if(inputText.match(mailformat)) {
+		return true;  
+	}     
+	return false;
+} 
 
 function getFocusOnField(usersData, f){
 	if(f == 0){
