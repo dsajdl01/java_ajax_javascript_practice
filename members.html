@@ -10,30 +10,34 @@
 
 	<body>
 		<form name="register" action="?" id="frm1" >
-						<fieldset id="register">
-							<legend> New Member </legend>
-							<label>First Name: </label><input type="text" id="firstName" maxlength="30" onkeyup="getValues();"><br>
-							
-							<label>Last Name: (optional) </label><input type="text" id="lastName" maxlength="30" onkeyup="getValues();"><br>
+				<fieldset id="register">
+					<legend> New Member </legend>
+						<div class="membersDatails">
+							<label>First Name: </label><input type="text" id="firstName" maxlength="30"><br>
+							<label>Last Name: (optional) </label><input type="text" id="lastName" maxlength="30"><br>
+							<label>Username: </label><input type="text" id="userName" maxlength="30"><br>
+						</div>
+						<div class="membersEmail">
+							<label>Members Email: </label><input type="text" id="email" maxlength="50"> <br>
+							<label>Confirm Email: </label><input type="text" id="emailConf" maxlength="50"> <br>
+						</div>
 
-							<label>Username: </label><input type="text" id="userName" maxlength="30" onkeyup="getValues();"><br>
-							
-							<label>Members Email: </label><input type="text" id="email" maxlength="50" onkeyup="getValues();"> <br>
-
-							<label>Date Of Birthday: (optional) </label><input type="text" id="dob" maxlength="30" onkeyup="getValues();"><br>
-							
+						<div class="membersOptions">
+							<label>Date Of Birthday: (optional) </label><input type="text" id="dob" maxlength="30"><br>
 							<label>Gendar: (optional) </label>
 								<select id="gender">
 									<option>Not say</option>
 									<option>Male</option>
 									<option>Female</option>
 								</select><br>
-							
-							<label>Location: (optional) </label><input type="text" id="location" maxlength="30" onkeyup="getValues();"><br>
-							<div id="button">
-								<input type="button" value="Save Data" id="saveData" onClick="getProcess()" >
-							</div>
-						</fieldset>
-					</form >
+							<label>Location: (optional) </label><input type="text" id="location" maxlength="30"><br>
+						</div>
+
+						<div id="button">
+							<input type="button" value="Save Data" id="saveData" onClick="getProcess()" >
+						</div>
+
+				</fieldset>
+			</form >
 	</body>
 </html>
