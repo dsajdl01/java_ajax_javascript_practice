@@ -1,20 +1,24 @@
 
-.mainContent {
+.mainContent
+{
     position: fixed;
     left: 50%;
     top: 50%;
     background-color: white;
     z-index: 100;
-    height: 400px;
+    height: 700px;
     margin-top: -200px;
     width: 600px;
     margin-left: -300px;
 }
-body {
+
+body
+{
 	background-color: #ffffff;
 }
 
-legend {
+legend
+{
 	background-color: #efefef;
 	border: 1px solid #dcdcdc;
 	border-radius: 10px;
@@ -23,30 +27,34 @@ legend {
 	text-transform: uppercase;
 
 }
-label {
+
+label
+{
 	padding-right: 10px;
  	display: inline-block; 
  	width: 185px; 
  	text-align: right;
  	padding-bottom: 5px;
 }
-fieldset {
-	width: 360px;
+
+fieldset
+{
+	width: 50px;
 	border: 1px solid #dcdcdc;
 	border-radius: 10px !important;
 	padding: 20px;
 }
+
 div.membersDatails, 
 div.membersEmail, 
-div.membersOptions {
+div.membersOptions
+{
 	border-bottom: 1px solid #efefef;
 	margin: 10px;
 	padding-bottom: 10px;
-	width: 380px;
+	width: 540px;
 }
-div#btn {
-	
-}
+
 input[type="button"] {
 	margin-right: 10px; 
 	float: right;
@@ -59,7 +67,9 @@ input[type="button"] {
 	background: -o-linear-gradient(top #beeae9, #a8cfce);
 	background: -ms-linear-gradient(top #beeae9, #a8cfce);
 }
-input[type="button"]:hover {
+
+input[type="button"]:hover
+{
 	margin-right: 10px; 
 	float: right;
 	border-top: 2px solid #d2d2d2;
@@ -70,4 +80,14 @@ input[type="button"]:hover {
 	background: -moz-linear-gradient(top #a8cfce #beeae9);	
 	background: -o-linear-gradient(top #a8cfce, #beeae9);
 	background: -ms-linear-gradient(top #a8cfce, #beeae9);
+}
+
+#firstNameId,
+#userNameId,
+#emailId,
+#emailConfId
+{
+	color: #FF0000;
+	font-size: 12px;
+	text-align: right;
 }
