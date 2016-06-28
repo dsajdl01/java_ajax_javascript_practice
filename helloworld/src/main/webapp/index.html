@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="testApp">
+	<head>
+		<title>Test Hello word form Rest call</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src="angular/mainController.js"></script>
+	</head>
+	<body  ng-controller="MainCtrl as ctrl" ng-init="ctrl.init()">
+		<h2>From AngularJS:</h2>
+		<p>{{ ctrl.message }}</p>
+		<hr/>
+		<h2>From Rest Services Java</h2>
+		<div ng-repeat="r in ctrl.restCall">
+			<div>{{ r }}</div>
+		</div>
+	</body>
+</html>
